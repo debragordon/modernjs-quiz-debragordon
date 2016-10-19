@@ -2,10 +2,72 @@
 <html>
 <head>
   <title>Modern JS Quiz</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <h1>Modern JS Quiz</h1>
+  <center>
+  <h1>Jungle Battle</h1>
+    <div id="user-input-wrapper" class="containerNarrow">
+      <div class="row space">
+        <div class="col-md-6">
+          <h3>Animal 1</h3>
+          <input type="text" name="" value="" placeholder="Enter Name" id="animal-input-1">
+        </div>
+        <div>
+          <h3>Animal 2</h3>
+          <input type="text" name="" value="" placeholder="Enter Name" id="animal-input-2">
+        </div>
+      </div>
+      <div class="row space">
+        <div class="col-md-6">
+          <select class="col-md-12" placeholder="Select Type">
+            <option value="lion">Lion</option>
+            <option value="bear">Bear</option>
+            <option value="snake1">Viper</option>
+            <option value="snake2">Python</option>
+            <option value="eagle">Eagle</option>
+            <option value="hawk">Hawk</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <select class="col-md-12" placeholder="Select Type">
+            <option value="lion">Lion</option>
+            <option value="bear">Bear</option>
+            <option value="snake1">Viper</option>
+            <option value="snake2">Python</option>
+            <option value="eagle">Eagle</option>
+            <option value="hawk">Hawk</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <button type="" class="attackButton" id="attack-btn">FIGHT</button>
+        <button type="" class="rematchButton" id="rematch-btn" onClick="window.location.reload()">REMATCH</button>
+      </div>
+    </div>
+    <div class="row jungle" id="jungle-bg">
+      <div class="col-md-12 jungleMainImage">
+        <div class="col-md-4 leftAnimal" id="animal-left">
+          filler animal left
+        </div>
+        <div class="col-md-4 centerStats" id="stats-center">
+          <div class="row">
+            <div class="col-md-6" id="animal1-stats">Animal 1 stats here (dynamically)</div>
+            <div class="col-md-6" id="animal2-stats">Animal 2 stats here (dynamically)</div>
+          </div>
+          <div class="row">
+          <div class="col-md-12" id="attack-results">attack results here (dynamically)</div>
+          </div>
+        </div>
+        <div class="col-md-4 rightAnimal" id="animal-right">
+          filler animal right
+        </div>
+      </div>
+    </div>
+  </center>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="/javascripts/app.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>
