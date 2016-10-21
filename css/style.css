@@ -30,6 +30,9 @@ input {
   padding: 10px 30px;
   margin: 10px 0px;
   border-radius: 10px;
+  font-size: 1.5em;
+  font-weight: bolder;
+  background: darkorange;
 }
 
 .rematchButton {
@@ -37,7 +40,8 @@ input {
   margin: 10px 0px;
   border-radius: 10px;
   background: darkslategray;
-  font-size: 1.1em;
+  font-size: 1.5em;
+  font-weight: bolder;
 }
 
 .hidden {
