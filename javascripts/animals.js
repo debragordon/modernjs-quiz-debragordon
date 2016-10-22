@@ -1,90 +1,110 @@
 var Jungle = (function(jungleClasses){
-//NEED TO CORRECT IIFE SYNTAX!?!
 
-  const Animal = function() {
-    this.damage = 50;
-    this.health = 100;
+  jungleClasses.AnimalKingdom = {};
+
+  jungleClasses.AnimalKingdom.Animal = function() {
+    this.name = "";
+    this.damage = 100;
+    this.health = 1000;
     this.weapon = null;
   };
 
-//TYPE = four-legged
+  var damageSetter = function (min, max) {
+    return Math.random() * (max - min) + min;
+  }
 
-  const FourLegged = function() {
+////////TYPE = four-legged
+
+  jungleClasses.AnimalKingdom.FourLegged = function() {
     this.movement = "Walker";
   }
 
-  FourLegged.prototype = new Animal();
+  jungleClasses.AnimalKingdom.FourLegged.prototype = new jungleClasses.AnimalKingdom.Animal();
 
-//MODELS (2)
+////////MODELS (2)
 
-  const Lion = function() {
+  jungleClasses.AnimalKingdom.Lion = function() {
     this.name = "Lion";
     this.health += 100;
-    this.damageRange = null;
+    this.damgage = damageSetter(100, 140);
+    this.weapon = "Claws";
   }
 
-  Lion.prototype = new FourLegged();
+  jungleClasses.AnimalKingdom.Lion.prototype = new jungleClasses.AnimalKingdom.FourLegged();
 
-  const Bear = function() {
+  jungleClasses.AnimalKingdom.Bear = function() {
     this.name = "Bear";
-    this.health = null;
-    this.damageRange = null;
+    this.health += 125;
+    this.damgage = damageSetter(70, 110);
+    this.weapon = "Ax";
   }
 
-  Bear.prototype = new FourLegged();
+  jungleClasses.AnimalKingdom.Bear.prototype = new jungleClasses.AnimalKingdom.FourLegged();
 
-//TYPE = Two-winged
+////////TYPE = Two-winged
 
-  const TwoWinged = function() {
+  jungleClasses.AnimalKingdom.TwoWinged = function() {
     this.movement = "Sky-flier";
   }
 
-  TwoWinged.prototype = new Animal();
+  jungleClasses.AnimalKingdom.TwoWinged.prototype = new jungleClasses.AnimalKingdom.Animal();
 
-//MODELS (2)
+////////MODELS (2)
 
-  const Eagle = function() {
-    this.name = "Eagle";
-    this.health += 75;
-    this.damageRange = null;
+  jungleClasses.AnimalKingdom.Eagle = function() {
+    this.name = "Lion";
+    this.health += 50;
+    this.damgage = damageSetter(60, 100);
+    this.weapon = "Talons";
   }
 
-  Eagle.prototype = new TwoWinged();
+  jungleClasses.AnimalKingdom.Eagle.prototype = new jungleClasses.AnimalKingdom.TwoWinged();
 
-  const Hawk = function() {
+  jungleClasses.AnimalKingdom.Hawk = function() {
     this.name = "Hawk";
-    this.health += 25;
-    this.damageRange = null;
+    this.health += 40;
+    this.damgage = damageSetter(30, 70);
+    this.weapon = "Beak";
   }
 
-  Hawk.prototype = new TwoWinged();
+  jungleClasses.AnimalKingdom.Hawk.prototype = new jungleClasses.AnimalKingdom.TwoWinged();
 
-//TYPE = scaled
+////////TYPE = scaled
 
-  const ScaleCrawler = function() {
+  jungleClasses.AnimalKingdom.ScaleCrawler = function() {
     this.movement = "Ground-hugger";
   }
 
-  ScaleCrawler.prototype = new Animal();
+  jungleClasses.AnimalKingdom.ScaleCrawler.prototype = new jungleClasses.AnimalKingdom.Animal();
 
-//MODELS (2)
+////////MODELS (2)
 
-  const Viper = function() {
+  jungleClasses.AnimalKingdom.Viper = function() {
     this.name = "Viper";
-    this.health += 25;
-    this.damageRange = null;
+    this.health += 20;
+    this.damgage = damageSetter(100, 140);
+    this.weapon = "Fangs";
   }
 
-  Viper.prototype = new ScaleCrawler();
+  jungleClasses.AnimalKingdom.Viper.prototype = new jungleClasses.AnimalKingdom.ScaleCrawler();
 
-  const Python = function() {
-    this.name = "Python";
-    this.health += 125;
-    this.damageRange = null;
+  jungleClasses.AnimalKingdom.Python = function() {
+    this.name = "Bear";
+    this.health += 30;
+    this.damgage = damageSetter(40, 75);
+    this.weapon = "Strangulation";
   }
 
-  Python.prototype = new ScaleCrawler();
+  jungleClasses.AnimalKingdom.Python.prototype = new jungleClasses.AnimalKingdom.ScaleCrawler();
 
-  // return jungleClasses;
+////////make an array of all the animals
+
+  return jungleClasses;
 
 })(Jungle || {});
+
+
+
+
+
+

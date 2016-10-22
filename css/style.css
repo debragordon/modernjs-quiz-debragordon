@@ -59,11 +59,16 @@ input {
 .rightAnimal,
 .centerStats {
   padding: 5px;
+  height: 600px;
 }
 
 .centerStats {
   background:rgba(0,0,0,0.8);
-  height: 600px;
+}
+
+.winner {
+  color: orange;
+  font-size: 3em;
 }
 
 /***** ANIMALS ******/

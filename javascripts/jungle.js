@@ -2,96 +2,93 @@ var Jungle = (function(battle){
 
 let animal1, animal2
 
-  battle.setAnimalPosition = function(animal1, animal2) {
-    if(animal1.class === "lion") {
-      $('#animal-right').addClass('lion');
-    } else if (animal1.class === "bear") {
-      $('#animal-right').addClass('bear');
-    } else if (animal1.class === "snake") {
-      $('#animal-right').addClass('snake');
-    } else if (animal1.class === "snake2") {
-      $('#animal-right').addClass('snake2');
-    } else if (animal1.class === "hawk") {
-      $('#animal-right').addClass('hawk');
-    } else if (animal1.class === "eagle") {
-      $('#animal-right').addClass('eagle');
-    }
+var $leftAnimal = $('#animal-left');
+var $rightAnimal = $('#animal-right');
+var $battleResults = $("#battle-results");
+var $animal1Stats = $("#animal1-stats");
+var $animal2Stats = $("#animal2-stats");
 
-    if(animal2.class === "lion") {
-      $('#animal-right').addClass('lion');
-    } else if (animal2.class === "bear") {
-      $('#animal-right').addClass('bear');
-    } else if (animal2.class === "snake") {
-      $('#animal-right').addClass('snake');
-    } else if (animal2.class === "snake2") {
-      $('#animal-right').addClass('snake2');
-    } else if (animal2.class === "hawk") {
-      $('#animal-right').addClass('hawk');
-    } else if (animal2.class === "eagle") {
-      $('#animal-right').addClass('eagle');
+  battle.createPlayers = function(animal1, animal2) {
+    if(animal1 === "Lion") {
+      $leftAnimal.addClass('lion');
+      player1 = new Jungle.AnimalKingdom.Lion();
+    } else if (animal1 === "Bear") {
+      $leftAnimal.addClass('bear');
+      player1 = new Jungle.AnimalKingdom.Bear();
+    } else if (animal1 === "Python") {
+      $leftAnimal.addClass('snake');
+      player1 = new Jungle.AnimalKingdom.Python();
+    } else if (animal1 === "Viper") {
+      $leftAnimal.addClass('snake2');
+      player1 = new Jungle.AnimalKingdom.Viper();
+    } else if (animal1 === "Hawk") {
+      $leftAnimal.addClass('hawk');
+      player1 = new Jungle.AnimalKingdom.Hawk();
+    } else if (animal1 === "Eagle") {
+      $leftAnimal.addClass('eagle');
+      player1 = new Jungle.AnimalKingdom.Hawk();
     }
+    console.log("player 1", player1);
+
+    if(animal2 === "Lion") {
+      $rightAnimal.addClass('lion');
+      player2 = new Jungle.AnimalKingdom.Lion();
+    } else if (animal2 === "Bear") {
+      $rightAnimal.addClass('bear');
+      player2 = new Jungle.AnimalKingdom.Bear();
+    } else if (animal2 === "Python") {
+      $rightAnimal.addClass('snake');
+      player2 = new Jungle.AnimalKingdom.Python();
+    } else if (animal2 === "Viper") {
+      $rightAnimal.addClass('snake2');
+      player2 = new Jungle.AnimalKingdom.Viper();
+    } else if (animal2 === "Hawk") {
+      $rightAnimal.addClass('hawk');
+      player2 = new Jungle.AnimalKingdom.Hawk();
+    } else if (animal2 === "Eagle") {
+      $rightAnimal.addClass('eagle');
+      player2 = new Jungle.AnimalKingdom.Hawk();
+    }
+    console.log("player 2", player2);
   };
 
-  battle.statUpdater = function(animal1, animal2) {
-    $("#animal1-stats").html(
-      `<h3>${animal1.type}</h3>
-      <h4>${animal1.class}</h4>
-      <h4>${animal1.health}</h4>
-      <h4>${animal1.damage}</h4>
-      <h5>${animal1.name}</h5>`
-    );
-
-    $("#animal2-stats").html(
-      `<h3>${animal2.type}</h3>
-      <h4>${animal2.class}</h4>
-      <h4>${animal2.health}</h4>
-      <h4>${animal2.damage}</h4>
-      <h5>${animal2.name}</h5>`
-    );
-  }
-
-  battle.InitializeJungleAttack = function() {
-    animal1 = currentAnimal1;
-    animal2 = currentAnimal2;
-
-    battle.setAnimalPosition(animal1, animal2);
-
-    battle.statUpdater(animal1, animal2);
-  }
-
-  $("#attack-btn").on("click", function(){
-    let animal1AttackMath = Math.floor(Math.random() * (animal1.attack + 1));
-    let animal2AttackMath = Math.floor(Math.random()* (animal2.attack + 1));
-    let animal2Attack, animal1Attack;
-
-    animal2Attack = animal2.health -= animal1AttackMath;
-    battle.updateanimal2Health();
-    //animal2 attack after 3 seconds
-    setTimeout(function(){
-      animal1Attack = animal1.health -= animal2AttackMath;
-      battle.updateanimal1Health();
-    }, 1000);
-    break;
-  }
-
-  if (animal1.health <= 0) {
-    animal1.health === 0;
-    setTimeout(function() {
-      $("#attack-btn").attr("disabled", true);
-      $("#attack-btn").addClass('hidden');
-      $("#rematch-btn").removeClass('hidden');
-      $('#attack-results')[0].innerText = "${animal2.class} is the winner";
-      }, 1500);
-    } else if (animal2.health <= 0) {
-      animal2.health === 0;
-      setTimeout(function() {
-        $("#attackButton").attr("disabled", true);
-        $("#attackButton").addClass('hidden');
-        $("#rematchButton").removeClass('hidden');
-      $('#attack-results')[0].innerText = "${animal1.class} is the winner";
-      }, 1500);
+  battle.damageGiver = function(player1, player2){
+    player1.health = player1.health - player2.damage; //change health
+    player2.health = player2.health - player1.damage; //change health
+    //once a player is at 0, pass on to the winner function
+    if (player1.health <= 0 || player2.health <= 0) {
+      battle.winner();
     }
-  });
+
+  }
+
+  battle.statUpdater = function(player1, player2) {
+    $animal1Stats.html(
+      `<h3>Animal: ${player1.name}</h3>
+      <h4>Health: ${player1.health}</h4>
+      <h4>Weapon: ${player1.weapon}</h4>
+      <h5>User: ${$player1}</h5>` /*this should be a player name*/
+    );
+
+    $animal2Stats.html(
+      `<h3>Animal: ${player2.name}</h3>
+      <h4>Health: ${player2.health}</h4>
+      <h4>Weapon: ${player2.weapon}</h4>
+      <h5>User: ${$player2}</h5>` /*this should be a player name*/
+    );
+  }
+
+  battle.winner = function (){
+    if (player1.health > 0) {
+      console.log("player 1 wins");
+      $battleResults.html(`<h2 class="winner">${$player1} is king of the jungle!</h2>`);
+    } else if (player2.health > 0) {
+      console.log("player 2 wins");
+      $battleResults.html(`<h2 class="winner">${$player2} is king of the jungle!</h2>`);
+    }
+    $attackButton.addClass("hidden");   //disables attack button when the winner/loser is determined
+    $rematchButton.removeClass("hidden");   //reveals rematch button to refresh the page and allow a restart of the game
+  }
 
   return battle;
 
