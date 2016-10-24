@@ -1,28 +1,33 @@
-# Modern JS Developer Quiz - Robot Battledome
+# NSS Mastery | Jungle Kingdom
 
-### Code/Tools Requirements
+## Game Features
 
-1. Use ES6 language features wherever you can. At a minimum, you should be using **let**, **const**, fat arrows, property shorthand, method properties, and string templates.
-1. Have a Grunt task running at all times to validate your JavaScript. We will be validating your project and we should see 0 errors.
+Game uses ES6 language features such as **let**, **const**, fat arrows, property shorthand, method properties, and string templates. jQuery is the preferred syntax and is used for interacting with the DOM.
 
-1. You must use jQuery for interacting with the DOM.
+## Game Functionality
 
-### Logical Requirements
+1. When the user interface first loads, there are 2 text inputs to name the two animals that will do battle.
+![Site Screenshot](https://raw.githubusercontent.com/debragordon/js-el-dynamic-cards/master/screenshots/dynamic-cards.png)
+1. The user then chooses an animal using a select element.
+![Site Screenshot](https://raw.githubusercontent.com/debragordon/js-el-dynamic-cards/master/screenshots/dynamic-cards.png)
+1. After the animals are created, the user enters the jungle and the enemies appear.
+![Site Screenshot](https://raw.githubusercontent.com/debragordon/js-el-dynamic-cards/master/screenshots/dynamic-cards.png)
+1. Using the attack button, the animals fight and their scores go down at random.
+![Site Screenshot](https://raw.githubusercontent.com/debragordon/js-el-dynamic-cards/master/screenshots/dynamic-cards.png)
+1. Once either animals's health is <0 a winner will be declared.
+![Site Screenshot](https://raw.githubusercontent.com/debragordon/js-el-dynamic-cards/master/screenshots/dynamic-cards.png)
 
-You'll be building robots to battle each other.
+## How to Run
+1. Clone repo to your local computer
+2. In your terminal be sure you are in this downloaded directory
+3. Once you are in the correct directory run this:
 
-1. A base Robot function.
-1. Define three robot type functions (e.g. Drone, Bipedal, ATV).
-1. Each type must have a unique property, for example, if it is aerial or ground based.
-1. Define at least 2 specific robot model functions for each type.
-1. Give each robot model a different range of health. For example, one model can have health range of 50-80, and another one will have a range of 60-120. To accomplish this, read about the [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) function in JavaScript.
-1. Give each robot model a different range of damage they do using the same technique.
+  ```
+  http-server -p 9999
+  ```
 
-### Functional Requirements
+4. Then navigate to http://localhost:9999 in your browser to view the files; it will be preferable to view in Google Chrome
+5. Once online, open the dev. tools to "see behind the curtain"
 
-1. When your user interface first loads, provide 2 text inputs to name the two robots that will do battle.
-1. You must also provide a select element underneath each text input so that the user can select one of the 6 robot models you defined.
-1. Provide a Attack! button that, when clicked, simply applies the damage output of each robot against the other one.
-1. Once either robot's health is <0 display a message that the battle is over, and which one won. For example...
-
-##### The Viper Drone defeated the Behemoth ATV with its flamethrower.
+## Contributors
+- [Debra Gordon](http://github.com/debragordon)
