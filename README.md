@@ -6,15 +6,13 @@ Game uses ES6 language features such as **let**, **const**, fat arrows, property
 ## Game Functionality
 
 ![Site Screenshot](https://raw.githubusercontent.com/nss-evening-cohort-04/modernjs-quiz-debragordon/quiz/screenshots/sneak-peak-1.png)
-1. When the user interface first loads, there are 2 text inputs to name the two animals that will do battle.
-2. The user then chooses an animal using a select element.
-3. After the animals are created, the user enters the jungle and the enemies appear.
+When the user interface first loads, there are 2 text inputs to name the two animals that will do battle. The user then chooses an animal using a select element. After the animals are created, the user enters the jungle and the enemies appear.
 
 ![Site Screenshot](https://raw.githubusercontent.com/nss-evening-cohort-04/modernjs-quiz-debragordon/quiz/screenshots/sneak-peak-2.png)
-4. Using the attack button, the animals fight and their scores go down at random.
+Using the attack button, the animals fight and their scores go down at random.
 
 ![Site Screenshot](https://raw.githubusercontent.com/nss-evening-cohort-04/modernjs-quiz-debragordon/quiz/screenshots/sneak-peak-3.png)
-5. Once either animals's health is <0 a winner will be declared.
+Once either animals's health is <0 a winner will be declared.
 
 ## How to Run
 1. Clone repo to your local computer
