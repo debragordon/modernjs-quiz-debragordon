@@ -7,6 +7,7 @@ let $enterButton = $("#enter-jungle-btn");
 let $attackButton = $("#attack-btn");
 let $rematchButton = $("#rematch-btn");
 let $playerInputArea = $("#user-input-wrapper");
+let $battleDiv = $("#jungle-bg");
 let $player1;
 let $player2;
 let $battleResults = $("#battle-results");
@@ -23,6 +24,7 @@ $enterButton.click(() => {
     $playerInputArea.addClass("hidden");   //hide player name inputs & animal selectors
     $enterButton.addClass("hidden");   //hide enter button
     $attackButton.removeClass("hidden"); //reveals the attack button
+    $battleDiv.removeClass("hidden"); //reveals the battleground
     player1 = Jungle.createPlayers($animalSelection1, "player1");//make the animal objects
     player2 = Jungle.createPlayers($animalSelection2, "player2");//make the animal objects
     Jungle.statUpdater(player1, player2, $player1, $player2);   //updates the inner html with the stats
