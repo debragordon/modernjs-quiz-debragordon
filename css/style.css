@@ -1,0 +1,110 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #006400;
+  color: white;
+}
+
+select,
+input {
+  color: black;
+}
+
+.jungle {
+  height: 600px;
+}
+
+.containerNarrow {
+  max-width: 500px;
+}
+
+.space {
+  padding: 2px;
+  margin: 10px 0px;
+}
+
+.attackButton {
+  padding: 10px 30px;
+  margin: 10px 0px;
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-weight: bolder;
+  background: darkorange;
+}
+
+.rematchButton {
+  padding: 10px 30px;
+  margin: 10px 0px;
+  border-radius: 10px;
+  background: darkslategray;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.hidden {
+  display: none;
+}
+
+.jungleMainImage {
+  background-image: url("/images/jungle.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.leftAnimal,
+.rightAnimal,
+.centerStats {
+  padding: 5px;
+  height: 600px;
+}
+
+.centerStats {
+  background:rgba(0,0,0,0.8);
+}
+
+.winner {
+  color: orange;
+  font-size: 3em;
+}
+
+/***** ANIMALS ******/
+
+.lion {
+  background-image: url("/images/lion.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bear {
+  background-image: url("/images/bear.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.snake {
+  background-image: url("/images/snake.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.snake2 {
+  background-image: url("/images/snake2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.eagle {
+  background-image: url("/images/eagle.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hawk {
+  background-image: url("/images/hawk.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

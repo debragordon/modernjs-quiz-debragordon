@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modern JS Quiz</title>
+  <link rel="stylesheet" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <center>
+  <h1>Jungle Battle</h1>
+    <div id="user-input-wrapper" class="containerNarrow">
+      <div class="row space">
+        <div class="col-md-6">
+          <h3>Animal 1</h3>
+          <input type="text" name="" value="" placeholder="Enter Name" id="player-input-1">
+        </div>
+        <div>
+          <h3>Animal 2</h3>
+          <input type="text" name="" value="" placeholder="Enter Name" id="player-input-2">
+        </div>
+      </div>
+      <div class="row space">
+        <div class="col-md-6">
+          <select class="col-md-12" placeholder="Select Type" id="animal-list-player1">
+            <option value="Lion">Lion</option>
+            <option value="Bear">Bear</option>
+            <option value="Viper">Viper</option>
+            <option value="Python">Python</option>
+            <option value="Eagle">Eagle</option>
+            <option value="Hawk">Hawk</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <select class="col-md-12" placeholder="Select Type" id="animal-list-player2">
+            <option value="Lion">Lion</option>
+            <option value="Bear">Bear</option>
+            <option value="Viper">Viper</option>
+            <option value="Python">Python</option>
+            <option value="Eagle">Eagle</option>
+            <option value="Hawk">Hawk</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button type="" class="attackButton" id="enter-jungle-btn">Enter The Jungle</button>
+      <button type="" class="attackButton hidden" id="attack-btn">Attack</button>
+      <button type="" class="rematchButton hidden" id="rematch-btn" onClick="window.location.reload()">REMATCH</button>
+    </div>
+
+    <div class="row jungle hidden" id="jungle-bg">
+      <div class="col-md-12 jungleMainImage">
+        <div class="col-md-4 leftAnimal" id="animal-left">
+        </div>
+        <div class="col-md-4 centerStats" id="stats-center">
+          <div class="row">
+            <div class="col-md-6" id="animal1-stats"></div>
+            <div class="col-md-6" id="animal2-stats"></div>
+          </div>
+          <div class="row">
+          <div class="col-md-12" id="battle-results"></div>
+          </div>
+        </div>
+        <div class="col-md-4 rightAnimal" id="animal-right">
+        </div>
+      </div>
+    </div>
+  </center>
+
+  <script src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/javascripts/animals.js" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="/javascripts/jungle.js" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="/javascripts/app.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>
